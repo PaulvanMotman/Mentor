@@ -1,0 +1,28 @@
+{
+  "name": "mentor",
+  "version": "1.0.0",
+  "description": "A platform app that connects mentors and (recent) grad students",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulvanMotman/Mentor.git"
+  },
+  "author": "Paul van Motman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PaulvanMotman/Mentor/issues"
+  },
+  "homepage": "https://github.com/PaulvanMotman/Mentor#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-session": "^1.13.0",
+    "passport": "^0.3.2",
+    "pg": "^6.0.1",
+    "pug": "^2.0.0-beta3",
+    "sequelize": "^3.23.4"
+  }
+}

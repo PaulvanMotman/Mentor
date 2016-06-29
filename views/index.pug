@@ -1,0 +1,24 @@
+doctype html
+html
+	head
+		title= title
+		//- Bootstrap
+		link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+		//- fontAwesome part of bootstrap icons and fonts
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css')
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+		//- jQuery
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js')
+		script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
+		//- CUSTOM.css
+		link(rel='stylesheet', href='/css/style.css')
+	body
+		div.container
+			div.row
+				div.col-sm-6.col-md-4.col-md-offset-4
+					h1.text-center.login-title
+						div.account-wall
+							div.login-welcome
+								h3 Welcome to Mentor
+							img(class='profile-img', src='images/mentorlogo.png')
+							a.btn.btn-block.btn-social.btn-facebook(href='/auth/github') Login here
