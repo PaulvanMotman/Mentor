@@ -1,36 +1,37 @@
 // declaring dependencies
 var express = require('express');
 var passport = require('passport');
-var GitHubStrategy = require('passport-github2').Strategy;
 var db = require('./database');
+var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
 
-passport.use(new GitHubStrategy({
-    clientID: process.env.GITHUB_CLIENT_ID,
-    clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/github/cb",
-    profileFields: ['repo']
-  },
+passport.use(new LinkedInStrategy({
+  clientID: process.env.LINKEDIN_CLIENT_ID,
+  clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
+  callbackURL: "http://localhost:3000/auth/linkedin/callback",
+  scope: ['r_emailaddress', 'r_basicprofile'],
+  state: true
+}, 
   function(accessToken, refreshToken, profile, done) {
     console.log(profile)
     profile.accessToken = accessToken;
     findOrCreateUser = function(){
-      db.user.find({ where: {'lnkid' :  profile.id }}).then(function(user) {
+      db.mentee.find({ where: {'lnkid' :  profile.id }}).then(function(mentee) {
         // already exists
-        if (user) {
-          console.log('User already exists with this username ');
+        if (mentee) {
+          console.log('Mentee already exists with this ID ');
           return;
         } else {
-          // if there is no user with that github id
-          // create the user
-          console.log('Cant find user, now I create a new user')
+          // if there is no mentee with that linkedin id
+          // create the mentee
+          console.log('Cant find Mentee, now I create a new Mentee')
 
           // save the user
-          db.user.create({
-            'ghid': profile.id,
-            'firstname': profile.username,
-            'lastname': profile._json.repos_url
-          }).then(function(user) {
-            console.log('User Registration successful');
+          db.mentee.create({
+            'lnkid': profile.id,
+            'firstname': profile.name.givenName,
+            'lastname': profile.name.familyName
+          }).then(function(mentee) {
+            console.log('Mentee Registration successful');
             return;    
           });
          }
@@ -40,6 +41,8 @@ passport.use(new GitHubStrategy({
     return done(null, profile);
   }
 ));
+
+
 
 passport.serializeUser(function(user, done) {
   done(null, user);

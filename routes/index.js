@@ -19,49 +19,38 @@ module.exports = function(passport){
   });
 
 
-//YOUR ACCOUNT PAGE WITH OVERVIEW OF REPOS
-//   router.get('/account', ensureAuthenticated, function(req, res){
-//     db.user.findOne({
-//       where: {
-//         ghid: req.user.id 
-//       }
-//     }).then(function(user){
-//       var user = user
-//       var options = {
-//         url: user.reposurl,
-//         headers: {
-//           'User-Agent': 'request'
-//         }
-//       }
-//       request(options, function (error, response, body) {
-//         if (!error) {
-//           console.log("it worked!") 
-//           res.render('account', { repos: JSON.parse(body), user: user });
-//         } else {
-//           res.send(error)
-//         }
-//       })
-//     })
-//   });
+// YOUR ACCOUNT PAGE WITH OVERVIEW OF REPOS
+  router.get('/home', ensureAuthenticated, function(req, res){
+    db.mentee.findOne({
+      where: {
+        lnkid: req.user.id 
+      }
+    }).then(function(mentee){
+      res.send(mentee.lnkid)
+    })
+  });
 
 
-// //LOGIN GH
-//   router.get('/auth/github',
-//     passport.authenticate('github', { scope: [ 'user:email'] }),
-//     function(req, res){
-//     });
+//LOGIN GH
+  router.get('/auth/linkedin',
+    passport.authenticate('linkedin'),
+    function(req, res){
+    // The request will be redirected to LinkedIn for authentication, so this
+    // function will not be called.
+  });
 
-// // RETURN AFTER LOGIN GH
-//   router.get('/auth/github/cb', 
-//     passport.authenticate('github', { failureRedirect: '/login' }),
-//     function(req, res) {
-//       res.redirect('/account');
-//     });
+// RETURN AFTER LOGIN GH
+  router.get('/auth/linkedin/callback', 
+    passport.authenticate('linkedin', {
+      successRedirect: '/home',
+      failureRedirect: '/login'
+    })
+  );
 
-//   router.get('/logout', function(req, res){
-//     req.logout();
-//     res.redirect('/');
-//   });
+  router.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/');
+  });
 
 
   return router;
