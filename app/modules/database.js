@@ -31,7 +31,7 @@ db.mentor = db.conn.define( 'mentor', {
 
 
 // Synchronise with database
-db.conn.sync( {'force': true} ).then( 
+db.conn.sync( {'force': false} ).then( 
 	() => { 
 		console.log ( 'Sync succeeded' )
 	},

@@ -26,12 +26,12 @@ module.exports = function(passport){
         lnkid: req.user.id 
       }
     }).then(function(mentee){
-      res.send(mentee.lnkid)
+      res.send(mentee.firstname)
     })
   });
 
 
-//LOGIN GH
+//LOGIN LINKEDIN
   router.get('/auth/linkedin',
     passport.authenticate('linkedin'),
     function(req, res){
@@ -39,8 +39,24 @@ module.exports = function(passport){
     // function will not be called.
   });
 
-// RETURN AFTER LOGIN GH
+// RETURN AFTER LOGIN LINKEDIN
   router.get('/auth/linkedin/callback', 
+    passport.authenticate('linkedin', {
+      successRedirect: '/home',
+      failureRedirect: '/login'
+    })
+  );
+
+  //LOGIN LINKEDIN
+  router.get('/auth/linkedin2',
+    passport.authenticate('linkedin'),
+    function(req, res){
+    // The request will be redirected to LinkedIn for authentication, so this
+    // function will not be called.
+  });
+
+// RETURN AFTER LOGIN LINKEDIN
+  router.get('/auth/linkedin/callback2', 
     passport.authenticate('linkedin', {
       successRedirect: '/home',
       failureRedirect: '/login'

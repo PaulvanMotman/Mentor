@@ -25,13 +25,51 @@ passport.use(new LinkedInStrategy({
           // create the mentee
           console.log('Cant find Mentee, now I create a new Mentee')
 
-          // save the user
+          // save the mentee
           db.mentee.create({
             'lnkid': profile.id,
             'firstname': profile.name.givenName,
             'lastname': profile.name.familyName
           }).then(function(mentee) {
             console.log('Mentee Registration successful');
+            return;    
+          });
+         }
+      });
+    };
+    process.nextTick(findOrCreateUser);
+    return done(null, profile);
+  }
+));
+
+passport.use(new LinkedInStrategy({
+  clientID: process.env.LINKEDIN_CLIENT_ID,
+  clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
+  callbackURL: "http://localhost:3000/auth/linkedin/callback2",
+  scope: ['r_emailaddress', 'r_basicprofile'],
+  state: true
+}, 
+  function(accessToken, refreshToken, profile, done) {
+    console.log(profile)
+    profile.accessToken = accessToken;
+    findOrCreateUser = function(){
+      db.mentor.find({ where: {'lnkid' :  profile.id }}).then(function(mentor) {
+        // already exists
+        if (mentor) {
+          console.log('Mentee already exists with this ID ');
+          return;
+        } else {
+          // if there is no mentor with that linkedin id
+          // create the mentor
+          console.log('Cant find Mentor, now I create a new Mentor')
+
+          // save the mentor
+          db.mentor.create({
+            'lnkid': profile.id,
+            'firstname': profile.name.givenName,
+            'lastname': profile.name.familyName
+          }).then(function(mentee) {
+            console.log('Mentor Registration successful');
             return;    
           });
          }
