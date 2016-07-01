@@ -21,14 +21,24 @@ module.exports = function(passport){
 
 // YOUR ACCOUNT PAGE WITH OVERVIEW OF REPOS
   router.get('/home', ensureAuthenticated, function(req, res){
-    // db.mentee.findOne({
-    //   where: {
-    //     lnkid: req.user.id 
-    //   }
-    // }).then(function(mentee){
-    //   res.send(mentee.firstname)
-    // })
-    res.render('home')
+    db.mentee.findOne({
+      where: {
+        lnkid: req.user.id 
+      }
+    }).then(function(mentee){
+      if (mentee) {
+        res.render('home', {firstname: mentee.firstname})
+      }
+      else {
+        db.mentor.findOne({
+          where: {
+            lnkid: req.user.id 
+          }
+        }).then(function(mentor){
+          res.render('home', {firstname: mentor.firstname})
+        })
+      }
+    })
   });
 
 
