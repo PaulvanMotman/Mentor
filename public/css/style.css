@@ -250,3 +250,7 @@ ul.user-details{
 .waves-effect:hover {
     background-color: #e53935 ;
 }
+
+.about .card img {
+    border-radius: 100%;
+}

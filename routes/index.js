@@ -27,7 +27,21 @@ module.exports = function(passport){
       }
     }).then(function(mentee){
       if (mentee) {
-        res.render('home', {firstname: mentee.firstname})
+        res.render('home', {
+          firstname: mentee.firstname,
+          lastname: mentee.lastname,
+          jobsummary: mentee.jobsummary,
+          companyname: mentee.companyname,
+          companyindustry: mentee.companyindustry,
+          jobtitle: mentee.jobtitle,
+          email: mentee.email,
+          workfield: mentee.workfield,
+          headline: mentee.headline,
+          location: mentee.location,
+          picture: mentee.picture,
+          summary: mentee.summary,
+          profileurl: mentee.profileurl
+        })
       }
       else {
         db.mentor.findOne({
@@ -35,7 +49,21 @@ module.exports = function(passport){
             lnkid: req.user.id 
           }
         }).then(function(mentor){
-          res.render('home', {firstname: mentor.firstname})
+          res.render('home', {
+            firstname: mentor.firstname,
+            lastname: mentor.lastname,
+            jobsummary: mentor.jobsummary,
+            companyname: mentor.companyname,
+            companyindustry: mentor.companyindustry,
+            jobtitle: mentor.jobtitle,
+            email: mentor.email,
+            workfield: mentor.workfield,
+            headline: mentor.headline,
+            location: mentor.location,
+            picture: mentor.picture,
+            summary: mentor.summary,
+            profileurl: mentor.profileurl
+          })
         })
       }
     })

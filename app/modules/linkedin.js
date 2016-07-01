@@ -30,7 +30,18 @@ passport.use(new LinkedInStrategy({
           db.mentee.create({
             'lnkid': profile.id,
             'firstname': profile.name.givenName,
-            'lastname': profile.name.familyName
+            'lastname': profile.name.familyName,
+            'jobsummary': profile._json.positions.values[0].summary,
+            'companyname': profile._json.positions.values[0].company.name,
+            'companyindustry': profile._json.positions.values[0].company.industry,
+            'jobtitle': profile._json.positions.values[0].title,
+            'email': profile.emails[0].value, 
+            'workfield': profile._json.industry,
+            'headline': profile._json.currentShare.headline,
+            'location': profile._json.location.name,
+            'picture': profile._json.pictureUrls.values[0],
+            'summary': profile._json.summary,
+            'profileurl': profile._json.publicProfileUrl
           }).then(function(mentee) {
             console.log('Mentee Registration successful');
             return;    
@@ -57,7 +68,7 @@ passport.use(new LinkedInStrategy({
       db.mentor.find({ where: {'lnkid' :  profile.id }}).then(function(mentor) {
         // already exists
         if (mentor) {
-          console.log('Mentee already exists with this ID ');
+          console.log('Mentor already exists with this ID ');
           return;
         } else {
           // if there is no mentor with that linkedin id
@@ -68,7 +79,18 @@ passport.use(new LinkedInStrategy({
           db.mentor.create({
             'lnkid': profile.id,
             'firstname': profile.name.givenName,
-            'lastname': profile.name.familyName
+            'lastname': profile.name.familyName,
+            'jobsummary': profile._json.positions.values[0].summary,
+            'companyname': profile._json.positions.values[0].company.name,
+            'companyindustry': profile._json.positions.values[0].company.industry,
+            'jobtitle': profile._json.positions.values[0].title,
+            'email': profile.emails[0].value, 
+            'workfield': profile._json.industry,
+            'headline': profile._json.currentShare.headline,
+            'location': profile._json.location.name,
+            'picture': profile._json.pictureUrls.values[0],
+            'summary': profile._json.summary,
+            'profileurl': profile._json.publicProfileUrl
           }).then(function(mentee) {
             console.log('Mentor Registration successful');
             return;    

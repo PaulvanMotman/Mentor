@@ -21,20 +21,23 @@ html
 			//- h6 let me introduce my self
 			hr
 			.row
-				.col.s12.m4.l4
-					h6 Story
-					p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-					p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-				.col.s12.m4.l4
+				.col.s12
 					h6 Profile
 					.card.blue-grey.darken-1
 						.card-content.white-text
-							img(src='http://labs.qnimate.com/portfolio-materialize/images/profile.png', width='64', height='64')
-							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+							img(src=picture, width='250', height='250', border-radius='100px')
+							p #{headline}
+							ul
+								li Jobtile: #{jobtitle}
+								li Company: #{companyname}
+								li Workfield: #{workfield}
+								li Location: #{location}
 						.card-action
-							a(href='#') Link
-							a(href='#') Link
-				.col.s12.m4.l4
+							a(href=profileurl) LinkedIn
+				.col.s12
+					h6 Summary
+					p #{summary}
+				.col.s12
 					h6 current jobs
 					ul.collapsible
 						li.active
