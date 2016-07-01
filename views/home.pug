@@ -2,15 +2,103 @@ doctype html
 html
 	head
 		title= title
-		//- Bootstrap
-		link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
-		//- fontAwesome part of bootstrap icons and fonts
-		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css')
-		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
-		//- jQuery
-		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js')
-		script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
+		//- Materialize
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css")
 		//- CUSTOM.css
-		link(rel='stylesheet', href='/css/style.css')
+		link(rel='stylesheet', href='/css/homestyle.css')
+		//- JQuery
+		script(src='https://code.jquery.com/jquery-3.0.0.min.js', integrity='sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=', crossorigin='anonymous')
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js")
+
+		script(src='/js/home.js')
+
 	body
-		h1 It works!
+		.intro.deep-orange.lighten-2.z-depth-1
+			h1.grey-text.text-lighten-5 Hi Mentee!
+			h5(clas='grey lighten-4 grey-text text-darken-1') Search Mentors here
+		.container.about
+			h5 My profile
+			//- h6 let me introduce my self
+			hr
+			.row
+				.col.s12.m4.l4
+					h6 Story
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				.col.s12.m4.l4
+					h6 Profile
+					.card.blue-grey.darken-1
+						.card-content.white-text
+							img(src='http://labs.qnimate.com/portfolio-materialize/images/profile.png', width='64', height='64')
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+						.card-action
+							a(href='#') Link
+							a(href='#') Link
+				.col.s12.m4.l4
+					h6 current jobs
+					ul.collapsible
+						li.active
+							.collapsible-header
+								i.mdi-av-web Designer
+							.collapsible-body
+								p Lorem ipsum dolor sit amet.
+						li
+							.collapsible-header
+								i.mdi-editor-format-align-justify Developer
+							.collapsible-body
+								p Lorem ipsum dolor sit amet.
+						li
+							.collapsible-header
+								i.mdi-av-play-shopping-bag Editor
+							.collapsible-body
+								p Lorem ipsum dolor sit amet.
+						li
+							.collapsible-header
+								i.mdi-editor-insert-comment Support
+							.collapsible-body
+								p Lorem ipsum dolor sit amet.
+		.container.portfolio
+			h5 portfolio
+			h6 MY LATEST PROJECTS
+			hr
+			.row
+				.col.s12.m12.l12.portfolio-holder
+					img.materialboxed(src='http://labs.qnimate.com/portfolio-materialize/images/project.png')
+					img.materialboxed(src='http://labs.qnimate.com/portfolio-materialize/images/project.png')
+					img.materialboxed(src='http://labs.qnimate.com/portfolio-materialize/images/project.png')
+					img.materialboxed(src='http://labs.qnimate.com/portfolio-materialize/images/project.png')
+					img.materialboxed(src='http://labs.qnimate.com/portfolio-materialize/images/project.png')
+					img.materialboxed(src='http://labs.qnimate.com/portfolio-materialize/images/project.png')
+		.container.contact
+			h5 contact
+			h6 get in touch with me
+			hr
+			.row
+				.col.s12.m6.l6
+					.row
+						form.col.s12
+							.row
+								.input-field.col.s6
+									input#first_name.validate(type='text')
+									label(for='first_name') First Name
+								.input-field.col.s6
+									input#last_name.validate(type='text')
+									label(for='last_name') Last Name
+							.row
+								.input-field.col.s12
+									input#email.validate(type='email')
+									label(for='email') E-Mail
+							textarea.materialize-textarea(placeholder='Your Message', required='')
+							button.btn.waves-effect.waves-light(type='submit', name='action') | Submit
+								i.mdi-content-send.right
+				.col.s12.m6.l6.contact-holder
+					h6.mdi-action-home Address
+					p Nr. 6, 21 Awesome Street, London, UK
+					h6.mdi-hardware-phone-android Phone Number
+					p +91 9912776151
+					h6.mdi-action-open-in-browser Website
+					p qnimate.com
+				footer
+		.footer-copyright
+			.container | © 2014 Copyright Text
+				a.grey-text.text-lighten-4.right(href='#!') Link

@@ -4,6 +4,7 @@ var passport = require('passport');
 var db = require('./database');
 var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
 
+
 passport.use(new LinkedInStrategy({
   clientID: process.env.LINKEDIN_CLIENT_ID,
   clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
