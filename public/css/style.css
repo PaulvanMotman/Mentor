@@ -1,256 +1,90 @@
-body, html
-{
-	background-color: #EDEDED !important;
-}
+body, html {
+  background-color: #009688 !important; }
 
-.intro
-{
-	text-align: center;
-	padding-top: 13%;
-	padding-bottom: 13%;
-	margin-bottom: 50px;
-}
-
-.intro h1
-{
-	font-weight: 900;
-	text-transform: uppercase;
-}
-
-.intro h5
-{
-	text-transform: uppercase;
-	background-color: #f5f5f5;
-	padding: 10px;
-	color: #333333;
-	display: inline-block;
-	font-size: 1.2rem;
-}
-
-
-.about .col
-{
-	margin-bottom: 24px;
-}
-
-.about h5
-{
-	text-align: center;
-	text-transform: uppercase;
-	margin-bottom: 15px;
-}
-
-.about h6
-{
-	text-align: center;
-	text-transform: uppercase;
-	margin-bottom: 45px;
-}
-
-.about hr
-{
-	width: 40px;
-	margin-bottom: 45px;
-}
-
-.about .card
-{
-	text-align: center;
-}
-
-.about .card img
-{
-	margin-bottom: 15px;
-}
-
-.portfolio .col
-{
-	margin-bottom: 24px;
-}
-
-.portfolio h5
-{
-	text-align: center;
-	text-transform: uppercase;
-	margin-bottom: 15px;
-}
-
-.portfolio h6
-{
-	text-align: center;
-	text-transform: uppercase;
-	margin-bottom: 45px;
-}
-
-.portfolio hr
-{
-	width: 40px;
-	margin-bottom: 45px;
-}
-
-.portfolio .portfolio-holder
-{
-	clear: both;
-	text-align: center;
-}
-
-.portfolio img
-{
-	width: 33%;
-	display: inline-block;
-	float: left;
-}
-
-.contact .col
-{
-	margin-bottom: 24px;
-}
-
-.contact h5
-{
-	text-align: center;
-	text-transform: uppercase;
-	margin-bottom: 15px;
-}
-
-.contact h6
-{
-	text-align: center;
-	text-transform: uppercase;
-	margin-bottom: 45px;
-}
-
-.contact hr
-{
-	width: 40px;
-	margin-bottom: 45px;
-}
-
-.contact .contact-holder
-{
-	padding-left: 40px;
-	text-align: left;
-}
-
-.contact .contact-holder h6
-{
-	margin-bottom: 15px;
-	text-align: left;
-}
-
-.contact .contact-holder p
-{
-	margin-bottom: 30px;
-}
-footer
-{
-	padding-top: 0px;
-}
-
-
-.form-signin{
-    max-width: 330px;
-    padding: 15px;
-    margin: 0 auto;
-}
-.form-signin .form-signin-heading, .form-signin .checkbox{
-    margin-bottom: 10px;
-}
-.form-signin .checkbox{
-    font-weight: normal;
-}
-.form-signin .form-control{
-    position: relative;
-    font-size: 16px;
-    height: auto;
-    padding: 10px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-.form-signin .form-control:focus{
-    z-index: 2;
-}
-.form-signin input[type="text"]{
-    margin-bottom: -1px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-.form-signin input[type="password"]{
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-.form-signin input[type="password"].nomargin{
-	margin-bottom: 0px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-.account-wall{
-    margin-top: 20px;
-    padding: 10px 0px 20px 0px;
-    text-align: center;
-    background-color: #f7f7f7;
-    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-}
-.signup-wall{
-	margin-top: 20px;
-    padding: 20px 0px 20px 0px;
-    background-color: #f7f7f7;
-    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);	
-    text-align: center;
-}
-.login-welcome{
-    padding-top: 1em;
-    padding-bottom: 1em;
-}
-.login-title{
-    color: #555;
-    font-size: 18px;
-    font-weight: 400;
-    display: block;
-}
-.login-image{
-    padding-top: 1em;
-}
-.profile-img{
+/*LANDING PAGE STYLING*/
+#navbar-landingpage {
+  background-color: #00796B; }
+  #navbar-landingpage .profile-img {
     width: 96px;
     height: 96px;
-    margin: 0 auto 10px;
+    margin: 10px;
     display: block;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
-    border-radius: 50%;
-}
-.new-account{
-    display: block;
-    margin-top: 10px;
-}
-h1.error-message{
-    color: red;
-}
-ul.user-details{
-    list-style: none;
-}
+    border-radius: 50%; }
 
-#welcomeheader {
-    text-align: center;
-}
-
+/*BUTTONS*/
 .waves-effect {
-    margin-right: 5px;
-    margin-bottom: 5px;
-    background-color: #b71c1c;
-}
+  margin-right: 5px;
+  margin-bottom: 5px;
+  background-color: #FF5252; }
 
 .waves-effect:hover {
-    background-color: #e53935 ;
-}
+  background-color: #ff3333; }
 
-.about .card img {
-    border-radius: 100%;
-}
+/*INPUT FIELDS*/
+.input-field .prefix.active {
+  color: #212121; }
+.input-field label {
+  color: #212121; }
+.input-field input {
+  color: #212121;
+  border-bottom: 2px solid #212121;
+  box-shadow: 0 1px 0 0 #212121; }
+.input-field input:not([type]):focus:not([readonly]), .input-field input[type=text]:focus:not([readonly]), .input-field input[type=password]:focus:not([readonly]), .input-field input[type=email]:focus:not([readonly]), .input-field input[type=url]:focus:not([readonly]), .input-field input[type=time]:focus:not([readonly]), .input-field input[type=date]:focus:not([readonly]), .input-field input[type=datetime]:focus:not([readonly]), .input-field input[type=datetime-local]:focus:not([readonly]), .input-field input[type=tel]:focus:not([readonly]), .input-field input[type=number]:focus:not([readonly]), .input-field input[type=search]:focus:not([readonly]), .input-field textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 2px solid #212121;
+  box-shadow: 0 1px 0 0 #212121;
+  color: #212121; }
+.input-field i {
+  color: #212121; }
+.input-field input:not([type]):focus:not([readonly]) + label, .input-field input[type=text]:focus:not([readonly]) + label, .input-field input[type=password]:focus:not([readonly]) + label, .input-field input[type=email]:focus:not([readonly]) + label, .input-field input[type=url]:focus:not([readonly]) + label, .input-field input[type=time]:focus:not([readonly]) + label, .input-field input[type=date]:focus:not([readonly]) + label, .input-field input[type=datetime]:focus:not([readonly]) + label, .input-field input[type=datetime-local]:focus:not([readonly]) + label, .input-field input[type=tel]:focus:not([readonly]) + label, .input-field input[type=number]:focus:not([readonly]) + label, .input-field input[type=search]:focus:not([readonly]) + label, .input-field textarea.materialize-textarea:focus:not([readonly]) + label,
+.input-field i:not([type]):focus:not([readonly]), .input-field input[type=text]:focus:not([readonly]), .input-field input[type=password]:focus:not([readonly]), .input-field input[type=email]:focus:not([readonly]), .input-field input[type=url]:focus:not([readonly]), .input-field input[type=time]:focus:not([readonly]), .input-field input[type=date]:focus:not([readonly]), .input-field input[type=datetime]:focus:not([readonly]), .input-field input[type=datetime-local]:focus:not([readonly]), .input-field input[type=tel]:focus:not([readonly]), .input-field input[type=number]:focus:not([readonly]), .input-field input[type=search]:focus:not([readonly]), .input-field textarea.materialize-textarea:focus:not([readonly]) {
+  color: #B2DFDB; }
+
+/*INTRO*/
+.intro {
+  text-align: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin-bottom: 50px;
+  background-color: #B2DFDB; }
+  .intro h1 {
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #FFFFFF; }
+  .intro h5 {
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #FFFFFF; }
+
+#homeintro {
+  padding-top: 4%;
+  padding-bottom: 0%; }
+
+.about {
+  text-align: center; }
+  .about .col {
+    margin-bottom: 24px; }
+  .about h5 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 15px; }
+  .about h6 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 45px; }
+  .about hr {
+    width: 40px;
+    margin-bottom: 45px; }
+  .about .card {
+    text-align: center; }
+    .about .card img {
+      margin-bottom: 15px;
+      border-radius: 100%; }
+
+.footer-copyright {
+  padding-top: 0px; }
+  .footer-copyright .container {
+    text-align: center; }
+
+/*# sourceMappingURL=style.css.map */

@@ -4,6 +4,7 @@ html
 		title= title
 		//- Materialize
 		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css")
+		link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
 		//- CUSTOM.css
 		link(rel='stylesheet', href='/css/style.css')
 		//- JQuery
@@ -13,95 +14,81 @@ html
 		script(src='/js/home.js')
 
 	body
-		.intro.deep-orange.lighten-2.z-depth-1
-			h1.grey-text.text-lighten-5 Hi #{firstname}!
-			h5(clas='grey lighten-4 grey-text text-darken-1') Search Mentors here
-		.container.about
-			h5 My profile
-			//- h6 let me introduce my self
-			hr
-			.row
-				.col.s12
-					h6 Profile
-					.card.blue-grey.darken-1
-						.card-content.white-text
-							img(src=picture, width='250', height='250', border-radius='100px')
-							p #{headline}
-							ul
-								li Jobtile: #{jobtitle}
-								li Company: #{companyname}
-								li Workfield: #{workfield}
-								li Location: #{location}
-						.card-action
-							a(href=profileurl) LinkedIn
-				.col.s12
-					h6 Summary
-					p #{summary}
-				.col.s12
-					h6 current jobs
-					ul.collapsible
-						li.active
-							.collapsible-header
-								i.mdi-av-web Designer
-							.collapsible-body
-								p Lorem ipsum dolor sit amet.
-						li
-							.collapsible-header
-								i.mdi-editor-format-align-justify Developer
-							.collapsible-body
-								p Lorem ipsum dolor sit amet.
-						li
-							.collapsible-header
-								i.mdi-av-play-shopping-bag Editor
-							.collapsible-body
-								p Lorem ipsum dolor sit amet.
-						li
-							.collapsible-header
-								i.mdi-editor-insert-comment Support
-							.collapsible-body
-								p Lorem ipsum dolor sit amet.
-		.container.portfolio
-			h5 portfolio
-			h6 MY LATEST PROJECTS
-			hr
-			.row
-				.col.s12.m12.l12.portfolio-holder
-					img.materialboxed(src='http://labs.qnimate.com/portfolio-materialize/images/project.png')
-					img.materialboxed(src='http://labs.qnimate.com/portfolio-materialize/images/project.png')
-					img.materialboxed(src='http://labs.qnimate.com/portfolio-materialize/images/project.png')
-					img.materialboxed(src='http://labs.qnimate.com/portfolio-materialize/images/project.png')
-					img.materialboxed(src='http://labs.qnimate.com/portfolio-materialize/images/project.png')
-					img.materialboxed(src='http://labs.qnimate.com/portfolio-materialize/images/project.png')
-		.container.contact
-			h5 contact
-			h6 get in touch with me
-			hr
-			.row
-				.col.s12.m6.l6
-					.row
-						form.col.s12
-							.row
-								.input-field.col.s6
-									input#first_name.validate(type='text')
-									label(for='first_name') First Name
-								.input-field.col.s6
-									input#last_name.validate(type='text')
-									label(for='last_name') Last Name
-							.row
-								.input-field.col.s12
-									input#email.validate(type='email')
-									label(for='email') E-Mail
-							textarea.materialize-textarea(placeholder='Your Message', required='')
-							button.btn.waves-effect.waves-light(type='submit', name='action') | Submit
-								i.mdi-content-send.right
-				.col.s12.m6.l6.contact-holder
-					h6.mdi-action-home Address
-					p Nr. 6, 21 Awesome Street, London, UK
-					h6.mdi-hardware-phone-android Phone Number
-					p +91 9912776151
-					h6.mdi-action-open-in-browser Website
-					p qnimate.com
-				footer
+		nav(id='navbar-landingpage')
+			.nav-wrapper.z-depth-1
+				a.brand-logo(href='/') 
+					img(class='profile-img', src='images/mentorlogo.png')
+				ul.right.hide-on-med-and-down
+					li
+						a.waves-effect.waves-light.btn(href='/logout') LOGOUT
+					li
+						a(href='/') About
+				a.button-collapse(href='/', data-activates='side-menu')
+					i.material-icons list
+				ul#side-menu.side-nav
+					li
+						a.waves-effect.waves-light.btn(href='/logout') LOGOUT
+					li
+						a(href='/') About
+		.intro.z-depth-2
+			.container.about
+				.row
+					h1 Hi #{firstname}
+					form.col.s12
+						.card
+							.card-content
+								.row
+									.input-field.col.m4.offset-m2.col.s8.offset-s2
+										i.material-icons.prefix explore
+										input#icon_prefix.validate(type='text')
+										label(for='icon_prefix') Search a mentor
+									.input-field.col.m4.col.s8.offset-s2
+										button.waves-effect.waves-light.btn(type='submit') Search
+					h5 LINKEDIN STATS
+					.col.s12
+						.card
+							.card-content
+								.row
+									.col.m6.s12
+										img(src=picture, width='250', height='250', border-radius='100px')
+										p #{headline}
+									.col.m6.s12
+										ul
+											li Jobtile: #{jobtitle}
+											li Company: #{companyname}
+											li Workfield: #{workfield}
+											li Location: #{location}
+											Li 
+												a(href=profileurl) Profile URL
+					h5 SUMMARY
+					.col.s12
+						.card
+							.card-content
+								p #{summary}
+					h5 JOBS
+					.col.s12
+						.card
+							.card-content
+								ul.collapsible
+									li.active
+										.collapsible-header
+											i.mdi-av-web Designer
+										.collapsible-body
+											p Lorem ipsum dolor sit amet.
+									li
+										.collapsible-header
+											i.mdi-editor-format-align-justify Developer
+										.collapsible-body
+											p Lorem ipsum dolor sit amet.
+									li
+										.collapsible-header
+											i.mdi-av-play-shopping-bag Editor
+										.collapsible-body
+											p Lorem ipsum dolor sit amet.
+									li
+										.collapsible-header
+											i.mdi-editor-insert-comment Support
+										.collapsible-body
+											p Lorem ipsum dolor sit amet.
 		.footer-copyright
-			.container | © 2014 Copyright Text
-				a.grey-text.text-lighten-4.right(href='#!') Link
+			.container | © 2016 Copyright Text

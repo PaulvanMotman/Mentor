@@ -1,0 +1,142 @@
+
+
+
+// /*COLOR PALETTE*/
+
+// // WHEN I CHANGE COLOR PALLET, GOT TO http://www.w3schools.com/colors/colors_picker.asp AND PICK A DARKER HEX
+// // FOR THIS VARIABLE!!
+$second-accent-color:  #ff3333;
+
+$primary-color-dark:   #00796B;
+$primary-color:        #009688;
+$primary-color-light:  #B2DFDB;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #FF5252;
+$primary-text-color:   #212121;
+$secondary-text-color: #727272;
+$divider-color:        #B6B6B6;
+
+
+body, html
+{
+    background-color: $primary-color !important;
+}
+
+/*LANDING PAGE STYLING*/
+
+#navbar-landingpage {
+    background-color: $primary-color-dark;
+    .profile-img {
+        width: 96px;
+        height: 96px;
+        margin: 10px;
+        display: block;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+    }
+}
+
+/*BUTTONS*/
+.waves-effect {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: $accent-color ;
+}
+
+.waves-effect:hover {
+    background-color: $second-accent-color;
+}
+
+
+/*INPUT FIELDS*/
+.input-field {
+    .prefix.active {
+        color: $primary-text-color;
+    }
+    label {
+        color: $primary-text-color;
+    }
+    input {
+        color: $primary-text-color;
+        border-bottom: 2px solid $primary-text-color;
+        box-shadow: 0 1px 0 0 $primary-text-color;
+    }
+    input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+        border-bottom: 2px solid $primary-text-color;
+        box-shadow: 0 1px 0 0 $primary-text-color;
+        color: $primary-text-color;
+    }
+    i {
+        color: $primary-text-color;
+    }
+    input:not([type]):focus:not([readonly])+label, input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([readonly])+label, input[type=email]:focus:not([readonly])+label, input[type=url]:focus:not([readonly])+label, input[type=time]:focus:not([readonly])+label, input[type=date]:focus:not([readonly])+label, input[type=datetime]:focus:not([readonly])+label, input[type=datetime-local]:focus:not([readonly])+label, input[type=tel]:focus:not([readonly])+label, input[type=number]:focus:not([readonly])+label, input[type=search]:focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label,
+    i:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+        color: $primary-color-light;
+    }
+}
+
+/*INTRO*/
+.intro {
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-bottom: 50px;
+    background-color: $primary-color-light;
+    h1 {
+        font-weight: 900;
+        text-transform: uppercase;
+        color: $primary-color-text;
+    }
+    h5 {
+        font-weight: 900;
+        text-transform: uppercase;
+        color: $primary-color-text;
+    }
+}
+
+// PROFILE INTRO
+#homeintro {
+    padding-top: 4%;
+    padding-bottom: 0%;
+}
+
+
+.about {
+    text-align: center;
+    .col {
+	   margin-bottom: 24px;
+    }
+    h5 {
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+    h6 {
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 45px;
+    }
+    hr {
+        width: 40px;
+        margin-bottom: 45px;
+    }
+    .card {
+        text-align: center;
+        img {
+            margin-bottom: 15px;
+            border-radius: 100%;
+        }
+    }
+}
+
+.footer-copyright
+{
+	padding-top: 0px;
+    .container {
+        text-align: center;
+    }
+}
+
+
+
