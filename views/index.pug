@@ -20,7 +20,7 @@ html
 				ul.right.hide-on-med-and-down
 					li
 						a.dropdown-button(href='#!', data-activates='dropdown1')
-							| Dropdown
+							| Login
 							i.material-icons.right arrow_drop_down
 					li
 						a(href='/') About
@@ -29,15 +29,15 @@ html
 				//- Dropdown Structure
 				ul#dropdown1.dropdown-content
 					li
-						a.waves-effect.waves-light.btn(href='/auth/linkedin') Mentee Login
+						a(href='/auth/linkedin') Mentee 
 					li.divider
 					li
-						a.waves-effect.waves-light.btn(href='/auth/linkedin2') Mentor Login
+						a(href='/auth/linkedin2') Mentor 
 				ul#side-menu.side-nav
 					li
-						a.waves-effect.waves-light.btn(href='/auth/linkedin') Mentee Login
+						a.waves-effect.waves-light.btn(href='/auth/linkedin') Mentee login
 					li
-						a.waves-effect.waves-light.btn(href='/auth/linkedin2') Mentor Login
+						a.waves-effect.waves-light.btn(href='/auth/linkedin2') Mentor login
 					li
 						a(href='/') About
 		.intro.z-depth-2
@@ -50,10 +50,11 @@ html
 								.row
 									.input-field.col.s4.offset-s2
 										i.material-icons.prefix explore
-										input#icon_prefix.validate(type='text')
+										input.validate(type='text', id='searchblock1', list='results' autocomplete="off")
 										label(for='icon_prefix') Search a mentor
+										datalist#results
 									.input-field.col.s4
-										button.waves-effect.waves-light.btn(type='submit') Search
+										button.waves-effect.waves-light.btn(id='search' type='submit') Search
 		.footer-copyright
 			.container | © 2016 Copyright Text
 

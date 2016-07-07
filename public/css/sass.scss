@@ -1,15 +1,14 @@
-
-
-
 // /*COLOR PALETTE*/
 
 // // WHEN I CHANGE COLOR PALLET, GOT TO http://www.w3schools.com/colors/colors_picker.asp AND PICK A DARKER HEX
 // // FOR THIS VARIABLE!!
 $second-accent-color:  #ff3333;
+$primary-color-dark2:  #00454d;
 
-$primary-color-dark:   #00796B;
-$primary-color:        #009688;
-$primary-color-light:  #B2DFDB;
+
+$primary-color-dark:   #0097A7;
+$primary-color:        #00BCD4;
+$primary-color-light:  #B2EBF2;
 $primary-color-text:   #FFFFFF;
 $accent-color:         #FF5252;
 $primary-text-color:   #212121;
@@ -19,10 +18,10 @@ $divider-color:        #B6B6B6;
 
 body, html
 {
-    background-color: $primary-color !important;
+    background-color: $primary-color-text !important;
 }
 
-/*LANDING PAGE STYLING*/
+/*NAVBAR STYLING*/
 
 #navbar-landingpage {
     background-color: $primary-color-dark;
@@ -35,6 +34,24 @@ body, html
         -webkit-border-radius: 50%;
         border-radius: 50%;
     }
+    #smallphoto {
+        width: 50px; 
+        height: 50px; 
+        border-radius: 100%; 
+        margin-top: 5px;
+    }
+    #nobackground:hover {
+        background-color: rgba(0,0,0,0) !important;
+    }
+    .bigphoto {
+        width: 200px; 
+        height: 200px; 
+        border-radius: 100%;
+        padding: 20px;
+    }
+    .btn:hover {
+        background-color: $second-accent-color;
+    }
 }
 
 /*BUTTONS*/
@@ -44,8 +61,23 @@ body, html
     background-color: $accent-color ;
 }
 
-.waves-effect:hover {
-    background-color: $second-accent-color;
+.waves-effect {
+    &:hover, &:focus {
+        margin-right: 5px;
+        margin-bottom: 5px;
+        background-color: $accent-color ;
+    }
+}
+
+.dropdown-content li {
+    a {
+        color: $primary-color-text;
+        background-color: $accent-color;
+    }
+    span {
+        color: $primary-color-text;
+        background-color: $accent-color;
+    }
 }
 
 
@@ -80,8 +112,7 @@ body, html
 .intro {
     text-align: center;
     padding-top: 5%;
-    padding-bottom: 5%;
-    margin-bottom: 50px;
+    padding-bottom: 9%;
     background-color: $primary-color-light;
     h1 {
         font-weight: 900;
@@ -93,6 +124,48 @@ body, html
         text-transform: uppercase;
         color: $primary-color-text;
     }
+    .col.l3 {
+        background-color: $primary-color-dark2;
+        color: $primary-color-text;
+        border-radius: 2px;
+        margin-bottom: 8px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .col.l9 {
+        margin-bottom: 8px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: left;
+
+    }
+    .col.l4 {
+        margin-top: 10px;
+        margin-bottom: 8px;
+    }
+    .col.m7 {
+        .row {
+            margin-bottom: 0px;
+            input {
+                margin: 0px;
+                height: 1rem;
+                color: grey;
+            }
+        }
+    }
+    .summary {
+        text-align: left;
+        padding: 20px;
+        textarea {
+            height: 300px;
+        }
+    }
+    #jobsummary {
+        text-align: left;
+        textarea {
+            height: 200px;
+        }
+    }
 }
 
 // PROFILE INTRO
@@ -101,21 +174,17 @@ body, html
     padding-bottom: 0%;
 }
 
+// ABOUT SECTION PROFILE
 
 .about {
     text-align: center;
     .col {
-	   margin-bottom: 24px;
+        margin-bottom: 24px;
     }
     h5 {
         text-align: center;
         text-transform: uppercase;
         margin-bottom: 15px;
-    }
-    h6 {
-        text-align: center;
-        text-transform: uppercase;
-        margin-bottom: 45px;
     }
     hr {
         width: 40px;
@@ -130,6 +199,20 @@ body, html
     }
 }
 
+.collapsible-body {
+    background-color: $primary-color-text;
+}
+
+.collapsible {
+    .collapsible-header.active {
+        background-color: $primary-color-dark2;
+        color: $primary-color-text;
+    }  
+}
+
+
+//FOOTER
+
 .footer-copyright
 {
 	padding-top: 0px;
@@ -137,6 +220,8 @@ body, html
         text-align: center;
     }
 }
+
+
 
 
 

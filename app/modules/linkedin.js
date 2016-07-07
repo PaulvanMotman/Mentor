@@ -5,7 +5,7 @@ var db = require('./database');
 var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
 
 
-passport.use(new LinkedInStrategy({
+passport.use('mentee', new LinkedInStrategy({
   clientID: process.env.LINKEDIN_CLIENT_ID,
   clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
   callbackURL: "http://localhost:3000/auth/linkedin/callback",
@@ -13,7 +13,6 @@ passport.use(new LinkedInStrategy({
   state: true
 }, 
   function(accessToken, refreshToken, profile, done) {
-    console.log(profile)
     profile.accessToken = accessToken;
     findOrCreateUser = function(){
       db.mentee.find({ where: {'lnkid' :  profile.id }}).then(function(mentee) {
@@ -54,7 +53,7 @@ passport.use(new LinkedInStrategy({
   }
 ));
 
-passport.use(new LinkedInStrategy({
+passport.use('mentor', new LinkedInStrategy({
   clientID: process.env.LINKEDIN_CLIENT_ID,
   clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
   callbackURL: "http://localhost:3000/auth/linkedin/callback2",
@@ -62,7 +61,6 @@ passport.use(new LinkedInStrategy({
   state: true
 }, 
   function(accessToken, refreshToken, profile, done) {
-    console.log(profile)
     profile.accessToken = accessToken;
     findOrCreateUser = function(){
       db.mentor.find({ where: {'lnkid' :  profile.id }}).then(function(mentor) {

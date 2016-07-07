@@ -5,6 +5,7 @@ var db = {
 
 // Set up sql
 var Sequelize = require( 'sequelize' )
+db.sequelize = Sequelize
 db.conn = new Sequelize('mentor', process.env.POSTGRES_USER, process.env.POSTGRES_PASSWORD, {
 	host: 'localhost',
 	dialect: 'postgres'
@@ -56,6 +57,42 @@ db.mentor = db.conn.define( 'mentor', {
 db.conn.sync( {'force': true} ).then( 
 	() => { 
 		console.log ( 'Sync succeeded' )
+		db.mentee.create({
+			lnkid: 'yvthyfhgyh',
+			firstname: 'Menteeeeeeee',
+			lastname: 'hjnm',
+			jobsummary: 'Sequelize.TEXT',
+			companyname: 'Sequelize.STRING',
+			companyindustry: 'Sequelize.STRING',
+			jobtitle: 'Sequelize.STRING',
+			email: 'Sequelize.STRING',
+			workfield: 'Sequelize.STRING',
+			headline: 'Sequelize.STRING',
+			location: 'Sequelize.STRING',
+			picture: 'Sequelize.STRING',
+			summary: 'Sequelize.TEXT',
+			profileurl: 'Sequelize.STRING'
+		}).then(() => {
+			console.log('Made a mentee')
+		})
+		db.mentor.create({
+			lnkid: 'yvthyfhgyh',
+			firstname: 'Mentoooooooor',
+			lastname: 'hjnm',
+			jobsummary: 'Sequelize.TEXT',
+			companyname: 'Sequelize.STRING',
+			companyindustry: 'Sequelize.STRING',
+			jobtitle: 'Sequelize.STRING',
+			email: 'Sequelize.STRING',
+			workfield: 'Sequelize.STRING',
+			headline: 'Sequelize.STRING',
+			location: 'Sequelize.STRING',
+			picture: 'Sequelize.STRING',
+			summary: 'Sequelize.TEXT',
+			profileurl: 'Sequelize.STRING'
+		}).then(()=>{
+			console.log('Made a mentor')
+		})
 	},
 	( err ) => { console.log('sync failed: ' + err) } 
 	)

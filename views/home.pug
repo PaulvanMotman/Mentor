@@ -20,21 +20,32 @@ html
 					img(class='profile-img', src='images/mentorlogo.png')
 				ul.right.hide-on-med-and-down
 					li
-						a.waves-effect.waves-light.btn(href='/logout') LOGOUT
+						a.dropdown-button(id='nobackground', href='/', data-activates='dropdown1')
+							img(id='smallphoto', src=picture)
 					li
 						a(href='/') About
 				a.button-collapse(href='/', data-activates='side-menu')
 					i.material-icons list
+				ul#dropdown1.dropdown-content
+					li
+						a(href='/home') Account settings
+					li.divider
+					li
+						a(href='/logout') Logout
 				ul#side-menu.side-nav
 					li
-						a.waves-effect.waves-light.btn(href='/logout') LOGOUT
+						img(src=picture, class='bigphoto')
+					li
+						a(href='/', data-activates='dropdown1') Account settings
 					li
 						a(href='/') About
+					li
+						a.waves-effect.waves-light.btn(href='/logout') LOGOUT
 		.intro.z-depth-2
 			.container.about
 				.row
-					h1 Hi #{firstname}
-					form.col.s12
+					.col.s12
+						h1 Hi #{firstname}
 						.card
 							.card-content
 								.row
@@ -44,51 +55,47 @@ html
 										label(for='icon_prefix') Search a mentor
 									.input-field.col.m4.col.s8.offset-s2
 										button.waves-effect.waves-light.btn(type='submit') Search
-					h5 LINKEDIN STATS
 					.col.s12
+						h5 LINKEDIN STATS
 						.card
 							.card-content
 								.row
-									.col.m6.s12
+									.col.m5.s12
 										img(src=picture, width='250', height='250', border-radius='100px')
 										p #{headline}
-									.col.m6.s12
-										ul
-											li Jobtile: #{jobtitle}
-											li Company: #{companyname}
-											li Workfield: #{workfield}
-											li Location: #{location}
-											Li 
-												a(href=profileurl) Profile URL
-					h5 SUMMARY
+									.col.m7.s12
+										.row
+											.col.l3.z-depth-1.m12.z-depth-1 Jobtitle
+											.col.l9.z-depth-1.m12.z-depth-1(id='class1', class='stats') #{jobtitle}
+											.col.l3.z-depth-1.m12.z-depth-1 Company
+											.col.l9.z-depth-1.m12.z-depth-1(id='class2', class='stats') #{companyname}
+											.col.l3.z-depth-1.m12.z-depth-1 Workfield
+											.col.l9.z-depth-1.m12.z-depth-1(id='class3', class='stats') #{workfield}
+											.col.l3.z-depth-1.m12.z-depth-1 Location
+											.col.l9.z-depth-1.m12.z-depth-1(id='class4', class='stats') #{location}
+											.col.l3.z-depth-1.m12.z-depth-1 LinkedIn 
+											.col.l9.z-depth-1.m12.z-depth-1(id='class5', class='stats')
+												a(href=profileurl) #{profileurl}
+											.col.l4.m12.offset-l4(id='class6' style="display: none") #{lnkid}
+											.col.l4.m12.offset-l4
+												button.waves-effect.waves-light.btn(id='edit-stats') Edit
 					.col.s12
+						h5 SUMMARY
 						.card
 							.card-content
-								p #{summary}
-					h5 JOBS
+								.row
+									.col.s12
+										p(class='summary') #{summary}
+									.col.l4.m12.offset-l4
+										button.waves-effect.waves-light.btn(id='edit-summary') Edit
 					.col.s12
-						.card
-							.card-content
-								ul.collapsible
-									li.active
-										.collapsible-header
-											i.mdi-av-web Designer
-										.collapsible-body
-											p Lorem ipsum dolor sit amet.
-									li
-										.collapsible-header
-											i.mdi-editor-format-align-justify Developer
-										.collapsible-body
-											p Lorem ipsum dolor sit amet.
-									li
-										.collapsible-header
-											i.mdi-av-play-shopping-bag Editor
-										.collapsible-body
-											p Lorem ipsum dolor sit amet.
-									li
-										.collapsible-header
-											i.mdi-editor-insert-comment Support
-										.collapsible-body
-											p Lorem ipsum dolor sit amet.
+						h5 JOBS
+						ul.collapsible
+							li.active
+								.collapsible-header
+									i.mdi-av-web.col.s12(class='job', id='jobtitle') #{jobtitle}
+								.collapsible-body
+									p(class='job', id='jobsummary') #{jobsummary}
+									button.waves-effect.waves-light.btn(id='edit-job') Edit
 		.footer-copyright
 			.container | © 2016 Copyright Text
