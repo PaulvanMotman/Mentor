@@ -44,13 +44,13 @@ html
 			.container.about
 				h1 Hi there!
 				.row
-					form.col.s12
+					form.col.s12(action="/searchresult", method="post")
 						.card
 							.card-content
 								.row
 									.input-field.col.s4.offset-s2
 										i.material-icons.prefix explore
-										input.validate(type='text', id='searchblock1', list='results' autocomplete="off")
+										input.validate(type='text', id='searchblock1', name='users', list='results' autocomplete="off")
 										label(for='icon_prefix') Search a mentor
 										datalist#results
 									.input-field.col.s4

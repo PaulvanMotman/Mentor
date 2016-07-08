@@ -126,27 +126,6 @@ $(document).ready(function(){
 	});
 });
 
-// Search button
-
-// $(document).ready(function(){
-// 	function searchquery() {
-// 		var data = $("#searchblock1").val()
-// 		console.log('Searching ' + data)
-// 		var search = {
-// 			firstname: data, 
-// 			ajax: true
-// 		}
-// 		if (search.firstname) {
-// 			$.get( '/searchquery', search, function(data) {
-// 			})
-// 		}
-// 	}
-// 	$("#search").on('click', function(event){
-// 		event.preventDefault()
-// 		searchquery()
-// 	});
-// });
-
 
 /// First always make sure the document is loaded
 $(document).ready(function () {
@@ -159,6 +138,8 @@ $(document).ready(function () {
 
 		/// parameters is assigned an object containing the values of keys that are entered
 		var parameters = {users: $(this).val(), ajax: true}
+
+		console.log(parameters)
 
 		/// as soon as parameters contains values
 		if (parameters.users) {

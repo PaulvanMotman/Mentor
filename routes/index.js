@@ -217,6 +217,7 @@ module.exports = function(passport){
 
 
   router.post('/searchresult', function (request, response) {
+    console.log("THIS IS THE USERS: ---> " + request.body.users)
     var username = request.body.users[0].toUpperCase() + request.body.users.slice(1);
     console.log("post request received for: " + username + ' of type ' + typeof username);
     var storeUser = []
@@ -240,7 +241,7 @@ module.exports = function(passport){
       if (mentee) {
         storeUser.push(mentee)
         if (!ajax) {
-           response.render('home', {
+           response.render('profile', {
             storeuser: storeUser
           })
         }
@@ -265,7 +266,7 @@ module.exports = function(passport){
         }).then(function(mentor){
           if (!ajax) {
             storeUser.push(mentor)
-            response.render('home', {
+            response.render('profile', {
               storeuser: storeUser
             })
           }

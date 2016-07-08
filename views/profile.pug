@@ -20,82 +20,67 @@ html
 					img(class='profile-img', src='images/mentorlogo.png')
 				ul.right.hide-on-med-and-down
 					li
-						a.dropdown-button(id='nobackground', href='/', data-activates='dropdown1')
-							img(id='smallphoto', src=picture)
+						a.dropdown-button(href='#!', data-activates='dropdown1')
+							| Login
+							i.material-icons.right arrow_drop_down
 					li
 						a(href='/') About
 				a.button-collapse(href='/', data-activates='side-menu')
 					i.material-icons list
+				//- Dropdown Structure
 				ul#dropdown1.dropdown-content
 					li
-						a(href='/home') Account settings
+						a(href='/auth/linkedin') Mentee 
 					li.divider
 					li
-						a(href='/logout') Logout
+						a(href='/auth/linkedin2') Mentor 
 				ul#side-menu.side-nav
 					li
-						img(src=picture, class='bigphoto')
+						a.waves-effect.waves-light.btn(href='/auth/linkedin') Mentee login
 					li
-						a(href='/', data-activates='dropdown1') Account settings
+						a.waves-effect.waves-light.btn(href='/auth/linkedin2') Mentor login
 					li
 						a(href='/') About
-					li
-						a.waves-effect.waves-light.btn(href='/logout') LOGOUT
 		.intro.z-depth-2
 			.container.about
 				.row
-					.col.s12
-						h1 Hi #{firstname}
-						.card
-							.card-content
-								.row
-									.input-field.col.m4.offset-m2.col.s8.offset-s2
-										i.material-icons.prefix explore
-										input#icon_prefix.validate(type='text')
-										label(for='icon_prefix') Search a mentor
-									.input-field.col.m4.col.s8.offset-s2
-										button.waves-effect.waves-light.btn(type='submit') Search
+					h1 CHECK OUT #{storeuser[0].firstname} #{storeuser[0].lastname}'s PROFILE
 					.col.s12
 						h5 SUMMARY
 						.card
 							.card-content
 								.row
 									.col.s12
-										p(class='summary') #{summary}
-									.col.l4.m12.offset-l4
-										button.waves-effect.waves-light.btn(id='edit-summary') Edit
+										p(class='summary') #{storeuser[0].summary}
 					.col.s12
 						h5 LINKEDIN STATS
 						.card
 							.card-content
 								.row
 									.col.m5.s12
-										img(src=picture, width='250', height='250', border-radius='100px')
-										p #{headline}
+										img(src=storeuser[0].picture, width='250', height='250', border-radius='100px')
+										p #{storeuser[0].headline}
 									.col.m7.s12
 										.row
 											.col.l3.z-depth-1.m12.z-depth-1 Jobtitle
-											.col.l9.z-depth-1.m12.z-depth-1(id='class1', class='stats') #{jobtitle}
+											.col.l9.z-depth-1.m12.z-depth-1(id='class1', class='stats') #{storeuser[0].jobtitle}
 											.col.l3.z-depth-1.m12.z-depth-1 Company
-											.col.l9.z-depth-1.m12.z-depth-1(id='class2', class='stats') #{companyname}
+											.col.l9.z-depth-1.m12.z-depth-1(id='class2', class='stats') #{storeuser[0].companyname}
 											.col.l3.z-depth-1.m12.z-depth-1 Workfield
-											.col.l9.z-depth-1.m12.z-depth-1(id='class3', class='stats') #{workfield}
+											.col.l9.z-depth-1.m12.z-depth-1(id='class3', class='stats') #{storeuser[0].workfield}
 											.col.l3.z-depth-1.m12.z-depth-1 Location
-											.col.l9.z-depth-1.m12.z-depth-1(id='class4', class='stats') #{location}
+											.col.l9.z-depth-1.m12.z-depth-1(id='class4', class='stats') #{storeuser[0].location}
 											.col.l3.z-depth-1.m12.z-depth-1 LinkedIn 
 											.col.l9.z-depth-1.m12.z-depth-1(id='class5', class='stats')
-												a(href=profileurl) #{profileurl}
-											.col.l4.m12.offset-l4(id='class6' style="display: none") #{lnkid}
-											.col.l4.m12.offset-l4
-												button.waves-effect.waves-light.btn(id='edit-stats') Edit
+												a(href=profileurl) #{storeuser[0].profileurl}
+											.col.l4.m12.offset-l4(id='class6' style="display: none") #{storeuser[0].lnkid}
 					.col.s12
 						h5 JOBS
 						ul.collapsible
 							li.active
 								.collapsible-header
-									i.mdi-av-web.col.s12(class='job', id='jobtitle') #{jobtitle}
+									i.mdi-av-web.col.s12(class='job', id='jobtitle') #{storeuser[0].jobtitle}
 								.collapsible-body
-									p(class='job', id='jobsummary') #{jobsummary}
-									button.waves-effect.waves-light.btn(id='edit-job') Edit
+									p(class='job', id='jobsummary') #{storeuser[0].jobsummary}
 		.footer-copyright
 			.container | © 2016 Copyright Text

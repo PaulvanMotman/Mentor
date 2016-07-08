@@ -54,45 +54,9 @@ db.mentor = db.conn.define( 'mentor', {
 
 
 // Synchronise with database
-db.conn.sync( {'force': true} ).then( 
+db.conn.sync( {'force': false} ).then( 
 	() => { 
 		console.log ( 'Sync succeeded' )
-		db.mentee.create({
-			lnkid: 'yvthyfhgyh',
-			firstname: 'Menteeeeeeee',
-			lastname: 'hjnm',
-			jobsummary: 'Sequelize.TEXT',
-			companyname: 'Sequelize.STRING',
-			companyindustry: 'Sequelize.STRING',
-			jobtitle: 'Sequelize.STRING',
-			email: 'Sequelize.STRING',
-			workfield: 'Sequelize.STRING',
-			headline: 'Sequelize.STRING',
-			location: 'Sequelize.STRING',
-			picture: 'Sequelize.STRING',
-			summary: 'Sequelize.TEXT',
-			profileurl: 'Sequelize.STRING'
-		}).then(() => {
-			console.log('Made a mentee')
-		})
-		db.mentor.create({
-			lnkid: 'yvthyfhgyh',
-			firstname: 'Mentoooooooor',
-			lastname: 'hjnm',
-			jobsummary: 'Sequelize.TEXT',
-			companyname: 'Sequelize.STRING',
-			companyindustry: 'Sequelize.STRING',
-			jobtitle: 'Sequelize.STRING',
-			email: 'Sequelize.STRING',
-			workfield: 'Sequelize.STRING',
-			headline: 'Sequelize.STRING',
-			location: 'Sequelize.STRING',
-			picture: 'Sequelize.STRING',
-			summary: 'Sequelize.TEXT',
-			profileurl: 'Sequelize.STRING'
-		}).then(()=>{
-			console.log('Made a mentor')
-		})
 	},
 	( err ) => { console.log('sync failed: ' + err) } 
 	)
