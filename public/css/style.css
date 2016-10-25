@@ -3,7 +3,7 @@ body, html {
 
 /*NAVBAR STYLING*/
 #navbar-landingpage {
-  background-color: #0097A7; }
+  background-color: #D32F2F; }
   #navbar-landingpage .profile-img {
     width: 96px;
     height: 96px;
@@ -25,25 +25,25 @@ body, html {
     border-radius: 100%;
     padding: 20px; }
   #navbar-landingpage .btn:hover {
-    background-color: #ff3333; }
+    background-color: #005eff; }
 
 /*BUTTONS*/
 .waves-effect {
   margin-right: 5px;
   margin-bottom: 5px;
-  background-color: #FF5252; }
+  background-color: #448AFF; }
 
 .waves-effect:hover, .waves-effect:focus {
   margin-right: 5px;
   margin-bottom: 5px;
-  background-color: #FF5252; }
+  background-color: #448AFF; }
 
 .dropdown-content li a {
   color: #FFFFFF;
-  background-color: #FF5252; }
+  background-color: #448AFF; }
 .dropdown-content li span {
   color: #FFFFFF;
-  background-color: #FF5252; }
+  background-color: #448AFF; }
 
 /*INPUT FIELDS*/
 .input-field .prefix.active {
@@ -62,24 +62,24 @@ body, html {
   color: #212121; }
 .input-field input:not([type]):focus:not([readonly]) + label, .input-field input[type=text]:focus:not([readonly]) + label, .input-field input[type=password]:focus:not([readonly]) + label, .input-field input[type=email]:focus:not([readonly]) + label, .input-field input[type=url]:focus:not([readonly]) + label, .input-field input[type=time]:focus:not([readonly]) + label, .input-field input[type=date]:focus:not([readonly]) + label, .input-field input[type=datetime]:focus:not([readonly]) + label, .input-field input[type=datetime-local]:focus:not([readonly]) + label, .input-field input[type=tel]:focus:not([readonly]) + label, .input-field input[type=number]:focus:not([readonly]) + label, .input-field input[type=search]:focus:not([readonly]) + label, .input-field textarea.materialize-textarea:focus:not([readonly]) + label,
 .input-field i:not([type]):focus:not([readonly]), .input-field input[type=text]:focus:not([readonly]), .input-field input[type=password]:focus:not([readonly]), .input-field input[type=email]:focus:not([readonly]), .input-field input[type=url]:focus:not([readonly]), .input-field input[type=time]:focus:not([readonly]), .input-field input[type=date]:focus:not([readonly]), .input-field input[type=datetime]:focus:not([readonly]), .input-field input[type=datetime-local]:focus:not([readonly]), .input-field input[type=tel]:focus:not([readonly]), .input-field input[type=number]:focus:not([readonly]), .input-field input[type=search]:focus:not([readonly]), .input-field textarea.materialize-textarea:focus:not([readonly]) {
-  color: #B2EBF2; }
+  color: #F5F5F5; }
 
 /*INTRO*/
 .intro {
   text-align: center;
   padding-top: 5%;
   padding-bottom: 9%;
-  background-color: #B2EBF2; }
+  background-color: #F5F5F5; }
   .intro h1 {
     font-weight: 900;
     text-transform: uppercase;
-    color: #FFFFFF; }
+    color: #212121; }
   .intro h5 {
     font-weight: 900;
     text-transform: uppercase;
-    color: #FFFFFF; }
+    color: #212121; }
   .intro .col.l3 {
-    background-color: #00454d;
+    background-color: #691616;
     color: #FFFFFF;
     border-radius: 2px;
     margin-bottom: 8px;
@@ -134,7 +134,7 @@ body, html {
   background-color: #FFFFFF; }
 
 .collapsible .collapsible-header.active {
-  background-color: #00454d;
+  background-color: #691616;
   color: #FFFFFF; }
 
 .footer-copyright {

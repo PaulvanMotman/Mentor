@@ -2,15 +2,27 @@
 
 // // WHEN I CHANGE COLOR PALLET, GOT TO http://www.w3schools.com/colors/colors_picker.asp AND PICK A DARKER HEX
 // // FOR THIS VARIABLE!!
-$second-accent-color:  #ff3333;
-$primary-color-dark2:  #00454d;
+// $second-accent-color:  #ff3333;
+// $primary-color-dark2:  #00454d;
 
 
-$primary-color-dark:   #0097A7;
-$primary-color:        #00BCD4;
-$primary-color-light:  #B2EBF2;
+// $primary-color-dark:   #0097A7;
+// $primary-color:        #00BCD4;
+// $primary-color-light:  #B2EBF2;
+// $primary-color-text:   #FFFFFF;
+// $accent-color:         #FF5252;
+// $primary-text-color:   #212121;
+// $secondary-text-color: #727272;
+// $divider-color:        #B6B6B6;
+
+$second-accent-color:  #005eff;
+$primary-color-dark2:  #691616;
+
+$primary-color-dark:   #D32F2F;
+$primary-color:        #F44336;
+$primary-color-light:  #F5F5F5;
 $primary-color-text:   #FFFFFF;
-$accent-color:         #FF5252;
+$accent-color:         #448AFF;
 $primary-text-color:   #212121;
 $secondary-text-color: #727272;
 $divider-color:        #B6B6B6;
@@ -117,12 +129,12 @@ body, html
     h1 {
         font-weight: 900;
         text-transform: uppercase;
-        color: $primary-color-text;
+        color: $primary-text-color;
     }
     h5 {
         font-weight: 900;
         text-transform: uppercase;
-        color: $primary-color-text;
+        color: $primary-text-color;
     }
     .col.l3 {
         background-color: $primary-color-dark2;
